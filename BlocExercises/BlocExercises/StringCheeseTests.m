@@ -17,7 +17,7 @@
 
 @implementation StringCheeseTests
 
-- (void)setUp
+- (void)setUp  
 {
     [super setUp];
     // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -33,8 +33,8 @@
 - (void)testThatCheeseFavoritingWorks {
     NSString *ricottaString = @"ricotta";
     NSString *favoriteCheese = [self.stringCheese favoriteCheeseStringWithCheese:ricottaString];
-    
     XCTAssertEqualObjects(favoriteCheese, @"My favorite cheese is ricotta.", @"Incorrect favorite cheese string returned.");
+    
 
     NSString *goatString = @"goat";
     favoriteCheese = [self.stringCheese favoriteCheeseStringWithCheese:goatString];

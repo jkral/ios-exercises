@@ -12,20 +12,38 @@
 
 - (NSString *) favoriteCheeseStringWithCheese:(NSString *)cheeseName {
     /* WORK HERE */
-    return nil;
+    
+    
+    NSString *favoriteCheese = [NSString stringWithFormat:@"My favorite cheese is %@.", cheeseName];
+    
+    
+    
+    return favoriteCheese;
 }
 
 - (NSString *) cheeseNameWithoutCheeseSuffix:(NSString *)cheeseName {
-    /*
-     You might want an if/else statement like this:
-     
-     (You will learn more about if/else statements in a later checkpoint.)
-     */
-    if ([[cheeseName lowercaseString] hasSuffix:@" cheese"]) {
+    
+    NSString *cheeseNameOnly;
+    
+   
+    if ([cheeseName hasSuffix:@" cheese"]) {
         /* WORK HERE, ASSUMING `cheeseName` ENDS WITH " cheese" */
-    } else {
+        cheeseNameOnly = [cheeseName stringByReplacingOccurrencesOfString:@" cheese"
+                                                                         withString:@""];
+
+
+    } else if ([cheeseName hasSuffix:@" Cheese"]){
         /* WORK HERE, ASSUMING `cheeseName` DOES NOT END WITH " cheese" */
+        cheeseNameOnly = [cheeseName stringByReplacingOccurrencesOfString:@" Cheese"
+                                                                         withString:@""];
+      
+    } else {
+        
+        cheeseNameOnly = cheeseName;
     }
+
+    
+    
 
     /*
      There is also a solution that doesn't require the if/else statement.
@@ -34,21 +52,50 @@
      your mentor.
      */
 
-    return nil;
+    return cheeseNameOnly;
+    
+    
 }
 
+
+
+
+
 - (NSString *) numberOfCheesesStringWithCheeseCount:(NSUInteger)cheeseCount {
+    
+    NSString *numberOfCheesesString;
+    
     if (cheeseCount == 1) {
         /* WORK HERE, ASSUMING THERE IS 1 CHEESE */
+        numberOfCheesesString = @"1 cheese";
+        
+        
+        
     } else {
         /* WORK HERE, ASSUMING THERE ARE 2+ CHEESES */
+    
+        numberOfCheesesString = [NSString stringWithFormat:@"%u cheeses", cheeseCount];
+        
+        
     }
     
     /*
      (You will learn more about if/else statements in a later checkpoint.)
      */
     
-    return nil;
+    return numberOfCheesesString;
 }
+
+//- (void)testThatTurningNumbersIntoStringsWorks {
+//    NSString *numberOfCheesesString = [self.stringCheese numberOfCheesesStringWithCheeseCount:7];
+//    XCTAssertEqualObjects(numberOfCheesesString, @"7 cheeses", @"7 cheeses should be returned");
+//    numberOfCheesesString = [self.stringCheese numberOfCheesesStringWithCheeseCount:24];
+//    XCTAssertEqualObjects(numberOfCheesesString, @"24 cheeses", @"24 cheeses should be returned");
+//}
+//
+//- (void)testThatTurningNumberOneIntoSingularCheeseStringWorks {
+//    NSString *numberOfCheesesString = [self.stringCheese numberOfCheesesStringWithCheeseCount:1];
+//    XCTAssertEqualObjects(numberOfCheesesString, @"1 cheese", @"1 cheese should be returned");
+//}
 
 @end
