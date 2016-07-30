@@ -12,19 +12,29 @@
 
 - (NSString *) favoriteCheeseStringWithCheese:(NSString *)cheeseName {
     /* WORK HERE */
-    return nil;
+    
+    
+    NSString *favoriteCheese = [NSString stringWithFormat:@"My favorite cheese is %@.", cheeseName];
+    
+    
+    
+    return favoriteCheese;
 }
 
 - (NSString *) cheeseNameWithoutCheeseSuffix:(NSString *)cheeseName {
-    /*
-     You might want an if/else statement like this:
-     
-     (You will learn more about if/else statements in a later checkpoint.)
-     */
+   
     if ([[cheeseName lowercaseString] hasSuffix:@" cheese"]) {
         /* WORK HERE, ASSUMING `cheeseName` ENDS WITH " cheese" */
-    } else {
+        
+//        NSString *emptyString = @"";
+//        
+//        NSString *cheeseNameOnly = - (NSString *)stringByReplacingOccurrencesOfString:(NSString *)cheeseName
+//                                                                        withString:(NSString *)emptyString;
+        
+    } else {:
         /* WORK HERE, ASSUMING `cheeseName` DOES NOT END WITH " cheese" */
+            cheeseNameOnly = cheeseName
+        
     }
 
     /*
@@ -34,7 +44,17 @@
      your mentor.
      */
 
-    return nil;
+    return cheeseNameOnly;
+    
+    
+//    - (void)testThatRemovingCheeseSuffixWorks {
+//        NSString *fullCheeseString = @"Monterey Jack cheese";
+//        NSString *cheeseNameOnly = [self.stringCheese cheeseNameWithoutCheeseSuffix:fullCheeseString];
+//        XCTAssertEqualObjects(cheeseNameOnly, @"Monterey Jack", @"Monterey Jack should be returned.");
+//        
+//        fullCheeseString = @"Ambert cheese";
+//        cheeseNameOnly = [self.stringCheese cheeseNameWithoutCheeseSuffix:fullCheeseString];
+//        XCTAssertEqualObjects(cheeseNameOnly, @"Ambert", @"Ambert should be returned.");
 }
 
 - (NSString *) numberOfCheesesStringWithCheeseCount:(NSUInteger)cheeseCount {
