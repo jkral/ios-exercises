@@ -74,7 +74,7 @@
     } else {
         /* WORK HERE, ASSUMING THERE ARE 2+ CHEESES */
     
-        numberOfCheesesString = [NSString stringWithFormat:@"%u cheeses", cheeseCount];
+        numberOfCheesesString = [NSString stringWithFormat:@"%ld cheeses", cheeseCount];
         
         
     }

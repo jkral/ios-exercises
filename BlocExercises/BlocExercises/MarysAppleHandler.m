@@ -16,7 +16,7 @@
     /* WORK HERE */
     
     
-    if (dollars == 4) {
+    if (dollars <= 4) {
         
         
         itemToReturn = @"get out of my store";
@@ -28,11 +28,11 @@
         
         itemToReturn = @"have an apple";
         
-    } else if (dollars == 1000) {
+    } else if (dollars <= 1000) {
         
         itemToReturn = @"have an Apple computer";
     
-    } else if (dollars == 1000000000) {
+    } else if (dollars <= 1000000000) {
         
         itemToReturn = @"have The Big Apple";
         
