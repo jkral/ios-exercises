@@ -24,15 +24,15 @@
         
         itemToReturn = @"have some gum";
         
-    } else if (dollars == 6) {
+    } else if (dollars < 1000) {
         
         itemToReturn = @"have an apple";
         
-    } else if (dollars <= 1000) {
+    } else if (dollars < 1000000000) {
         
         itemToReturn = @"have an Apple computer";
     
-    } else if (dollars <= 1000000000) {
+    } else {
         
         itemToReturn = @"have The Big Apple";
         

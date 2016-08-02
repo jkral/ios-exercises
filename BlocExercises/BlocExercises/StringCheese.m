@@ -23,27 +23,36 @@
 
 - (NSString *) cheeseNameWithoutCheeseSuffix:(NSString *)cheeseName {
     
-    NSString *cheeseNameOnly;
+//    NSString *cheeseNameOnly;
+//    
+//   
+//    if ([cheeseName hasSuffix:@" cheese"]) {
+//        /* WORK HERE, ASSUMING `cheeseName` ENDS WITH " cheese" */
+//        cheeseNameOnly = [cheeseName stringByReplacingOccurrencesOfString:@" cheese"
+//                                                                         withString:@""];
+//
+//
+//    } else if ([cheeseName hasSuffix:@" Cheese"]){
+//        /* WORK HERE, ASSUMING `cheeseName` DOES NOT END WITH " cheese" */
+//        cheeseNameOnly = [cheeseName stringByReplacingOccurrencesOfString:@" Cheese"
+//                                                                         withString:@""];
+//      
+//    } else {
+//        
+//        cheeseNameOnly = cheeseName;
+//    }
+//
+//    NSRange range = NSMakeRange(0, cheeseName.length);
     
-   
-    if ([cheeseName hasSuffix:@" cheese"]) {
-        /* WORK HERE, ASSUMING `cheeseName` ENDS WITH " cheese" */
-        cheeseNameOnly = [cheeseName stringByReplacingOccurrencesOfString:@" cheese"
-                                                                         withString:@""];
-
-
-    } else if ([cheeseName hasSuffix:@" Cheese"]){
-        /* WORK HERE, ASSUMING `cheeseName` DOES NOT END WITH " cheese" */
-        cheeseNameOnly = [cheeseName stringByReplacingOccurrencesOfString:@" Cheese"
-                                                                         withString:@""];
-      
-    } else {
-        
-        cheeseNameOnly = cheeseName;
-    }
-
     
     
+    
+    NSString *cheeseNameOnly = [cheeseName stringByReplacingOccurrencesOfString:@" cheese" withString:@"" options:NSCaseInsensitiveSearch range:NSMakeRange(0, cheeseName.length)];
+    
+
+     
+//     
+//     [mystring stringByReplacingOccurrencesOfString:@"searchString" withString:@"replaceString" options:NSCaseInsensitiveSearch range:NSMakeRange(0, [mystring length])];
 
     /*
      There is also a solution that doesn't require the if/else statement.
