@@ -25,9 +25,21 @@
     /* WORK HERE */
     
     
-    NSArray *expectedArray = [charactersArray valueForKey:(@"favorite drink")];
+//    NSArray *expectedArray = [charactersArray valueForKey:@"favorite drink"];
+//    
+//    return expectedArray;
     
-    return expectedArray;
+    NSMutableArray *drinks = [[NSMutableArray alloc] initWithCapacity:charactersArray.count];
+    
+    for (NSDictionary *character in charactersArray) {
+        
+        NSString *favDrink = [self favoriteDrinkForStarTrekCharacterDictionary:character];
+        
+        [drinks addObject:favDrink];
+    }
+    
+    return drinks;
+    
 }
 
 
@@ -36,7 +48,9 @@
     
     NSMutableDictionary *resultDictionary = [characterDictionary mutableCopy];
     
-    [resultDictionary setObject:@("make it so") forKey:@"quote"];
+    //Move to new syntax
+    resultDictionary[@"quote"] = @"make it so";
+    
         
     
     return resultDictionary;

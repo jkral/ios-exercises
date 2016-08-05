@@ -17,8 +17,7 @@
     
     int bigInt = num * 2;
     
-    NSNumber *bigNumber = [NSNumber numberWithInt:bigInt];
-    
+    NSNumber *bigNumber = @(bigInt);
     
     return bigNumber;
 }
@@ -29,9 +28,11 @@
         
         NSMutableArray *expectedArray = [NSMutableArray array];
         
-        for(NSInteger i = number; i < otherNumber+1; i++) {
+        for(NSInteger i = number; i <= otherNumber; i++) {
             
-            [expectedArray addObject:[NSNumber numberWithInt:i]];
+//            [expectedArray addObject:[NSNumber numberWithLong:i]];
+            
+            [expectedArray addObject:@(i)];
             
         }
     

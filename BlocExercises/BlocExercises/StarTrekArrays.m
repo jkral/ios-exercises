@@ -46,24 +46,17 @@
 
 - (BOOL) characterArrayContainsWorf:(NSArray *)characterArray {
     /* WORK HERE */
-    
-    BOOL worf;
-    
-    
+
     NSPredicate *containsWorf = [NSPredicate predicateWithFormat:@"SELF CONTAINS[c] 'Worf'"];
-    
     
     if ([[characterArray filteredArrayUsingPredicate:containsWorf] count] == 0) {
         
-        worf = NO;
+        return NO;
         
     } else {
-        
-        worf = YES;
+        return YES;
     }
-    
-    
-    return worf;
+
 }
 
 
