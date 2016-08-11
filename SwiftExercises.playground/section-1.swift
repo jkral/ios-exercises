@@ -8,13 +8,17 @@ Strings
 
 func favoriteCheeseStringWithCheese(cheese: String) -> String {
     // WORK HERE
+
+
     return cheese
 }
 
-let fullSentence = favoriteCheeseStringWithCheese("cheddar")
+var fullSentence = favoriteCheeseStringWithCheese("cheddar")
 // Make fullSentence say "My favorite cheese is cheddar."
 
+    fullSentence = "My favorite cheese is " + fullSentence
 
+    print(fullSentence)
 
 /*
 
@@ -78,36 +82,24 @@ func favoriteDrinksArrayForCharacters(characters:[[String : String]]) -> [String
     // return an array of favorite drinks, like ["prune juice", "tea, Earl Grey, hot"]
     // WORK HERE
     
-    var drinks = [];
+    var drinks = [String]()
     
     
-    if let drink = characters[0]["favorite drink"] {
+    for (i) in characters {
         
-         print(drink)
-        
-//        return drinks
-    } else {
-        
-        print("no can do")
+        drinks.append(i["favorite drink"]!)
     }
+
     
+
+   return drinks
     
-    
-    
-    
-//    if let unwrappedAuthor = theMistsOfAvalon["author"] {
-//        // in this scope, author is guaranteed not to be nil
-//        println("The author is \(unwrappedAuthor).")
-//    } else {
-//        println("We don't know who wrote this.")
-//    }
-    
-    return drinks as! [String];
 }
+
+
 
 let favoriteDrinks = favoriteDrinksArrayForCharacters(characters)
 
-//favoriteDrinks
 
 /*
 
@@ -119,7 +111,13 @@ func emailFromUserDict(userDict : [String : String]) -> String {
     // Return the user's email address from userDict, or return "" if they don't have one
     
     // WORK HERE
-    return "user@example.com"
+    if let email = userDict["email"] {
+        
+        return email
+    }  else {
+        
+        return ""
+    }
 }
 
 
@@ -141,9 +139,21 @@ Functions
 
 // Make a function that inputs an array of strings and outputs the strings separated by a semicolon
 
-let strings = ["milk", "eggs", "bread", "challah"]
+var strings = ["milk", "eggs", "bread", "challah"]
 
 // WORK HERE - make your function and pass `strings` in
+
+func food (strings: [String]) -> String {
+    
+   let newStrings = strings.joinWithSeparator(";")
+    
+    print(newStrings)
+    
+    return newStrings
+    
+}
+
+food(strings)
 
 let expectedOutput = "milk;eggs;bread;challah"
 
@@ -157,3 +167,10 @@ let cerealArray = ["Golden Grahams", "Cheerios", "Trix", "Cap'n Crunch OOPS! All
 
 // Use a closure to sort this array alphabetically
 // WORK HERE
+
+
+let cerealSort = cerealArray.sort( { (s1: String, s2: String) -> Bool in return s1 < s2 } )
+
+print(cerealSort)
+
+
