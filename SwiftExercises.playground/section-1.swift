@@ -8,17 +8,16 @@ Strings
 
 func favoriteCheeseStringWithCheese(cheese: String) -> String {
     // WORK HERE
-
-
-    return cheese
+    
+    
+    let fullSentence = "My favorite cheese is " + cheese + ".";
+    return fullSentence
 }
 
-var fullSentence = favoriteCheeseStringWithCheese("cheddar")
+
+let fullSentence = favoriteCheeseStringWithCheese("cheddar")
 // Make fullSentence say "My favorite cheese is cheddar."
 
-    fullSentence = "My favorite cheese is " + fullSentence
-
-    print(fullSentence)
 
 /*
 
