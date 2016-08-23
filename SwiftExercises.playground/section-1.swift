@@ -35,10 +35,10 @@ numberArray.append(5)
 var numberDictionary = [1 : "one", 2 : "two", 3 : "three", 4 : "four"]
 // Add 5 : "five" to this dictionary
 // WORK HERE
-
 numberDictionary[5] = "five"
 
 numberDictionary
+
 
 /*
 

@@ -14,37 +14,26 @@
     /* WORK HERE */
     
     NSString *expectedString = @"";
-    
-    if (number <= otherNumber) {
-    
-    while (number <= otherNumber) {
+    NSInteger lowNumber = number;
+    NSInteger highNumber = otherNumber;
+
+    if (lowNumber > highNumber) {
         
-        
-        expectedString = [expectedString stringByAppendingFormat:@"%ld", number];
-        
-        number++;
+        lowNumber = otherNumber;
+        highNumber = number;
     }
-    } else {
-        
-        while (number >= otherNumber) {
-            
-            
-            expectedString = [expectedString stringByAppendingFormat:@"%ld", otherNumber];
-            
-            otherNumber++;
+    
+        while (lowNumber <= highNumber) {
+    
+            expectedString = [expectedString stringByAppendingFormat:@"%ld", lowNumber];
+    
+            lowNumber++;
+    
         }
-        
-
-    }
-    
-    
-    
-
     
     return expectedString;
 }
 
 @end
-
 
 
